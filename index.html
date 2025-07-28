@@ -3,552 +3,594 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlantHerPower - Rooted in Nature. Powered by Women.</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>PlantHerPower - Grow. Empower. Inspire.</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Georgia', serif;
             line-height: 1.6;
-            color: #2d3748;
-            overflow-x: hidden;
+            color: #2d4a2b;
+            background-color: #f9f7f4;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Header */
         header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
+            background: linear-gradient(135deg, #7b9a76 0%, #5a7c55 100%);
+            color: white;
             padding: 1rem 0;
-            transition: all 0.3s ease;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        
-        nav {
+
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #68d391;
             text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: #2d3748;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: #68d391;
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, #f7fafc 0%, #e6fffa 100%);
+            color: white;
             display: flex;
             align-items: center;
-            position: relative;
-            overflow: hidden;
         }
-        
-        .floating-leaves {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
+
+        .logo::before {
+            content: "🌿";
+            margin-right: 0.5rem;
+            font-size: 2rem;
         }
-        
-        .leaf {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: #68d391;
-            border-radius: 0 100% 0 100%;
-            animation: float 15s infinite linear;
-            opacity: 0.6;
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
         }
-        
-        .leaf:nth-child(1) { left: 10%; animation-delay: 0s; }
-        .leaf:nth-child(2) { left: 20%; animation-delay: 2s; }
-        .leaf:nth-child(3) { left: 30%; animation-delay: 4s; }
-        .leaf:nth-child(4) { left: 40%; animation-delay: 6s; }
-        .leaf:nth-child(5) { left: 50%; animation-delay: 8s; }
-        .leaf:nth-child(6) { left: 60%; animation-delay: 10s; }
-        .leaf:nth-child(7) { left: 70%; animation-delay: 12s; }
-        .leaf:nth-child(8) { left: 80%; animation-delay: 14s; }
-        
-        @keyframes float {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.6;
-            }
-            90% {
-                opacity: 0.6;
-            }
-            100% {
-                transform: translateY(-100px) rotate(360deg);
-                opacity: 0;
-            }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
         }
-        
-        .hero-content {
-            z-index: 2;
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(123, 154, 118, 0.3), rgba(90, 124, 85, 0.3)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f9f7f4" width="1200" height="600"/><path fill="%237b9a76" opacity="0.1" d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            padding: 8rem 0;
             text-align: center;
+            position: relative;
         }
-        
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: bold;
-            color: #2d3748;
+
+        .hero-content h1 {
+            font-size: 3.5rem;
             margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
+            color: #2d4a2b;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
         }
-        
+
         .tagline {
-            font-size: 1.5rem;
-            color: #68d391;
-            font-style: italic;
+            font-size: 1.8rem;
             margin-bottom: 2rem;
-            animation: fadeInUp 1s ease 0.3s both;
+            color: #5a7c55;
+            font-style: italic;
         }
-        
+
         .cta-button {
-            background: linear-gradient(135deg, #68d391, #48bb78);
+            display: inline-block;
+            background: linear-gradient(135deg, #8b5a3c 0%, #a0694d 100%);
             color: white;
             padding: 1rem 2.5rem;
-            border: none;
+            text-decoration: none;
             border-radius: 50px;
             font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            animation: fadeInUp 1s ease 0.6s both;
-            text-decoration: none;
-            display: inline-block;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(139, 90, 60, 0.3);
         }
-        
+
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(104, 211, 145, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 90, 60, 0.4);
         }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 0;
         }
-        
-        /* Featured Products */
-        .featured-products {
-            padding: 6rem 0;
-            background: #ffffff;
-        }
-        
+
         .section-title {
-            text-align: center;
             font-size: 2.5rem;
-            color: #2d3748;
+            text-align: center;
             margin-bottom: 3rem;
+            color: #2d4a2b;
+            position: relative;
         }
-        
-        .products-grid {
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, #7b9a76, #8b5a3c);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 0 20px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            text-align: center;
+            font-size: 8rem;
+            color: #7b9a76;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(123, 154, 118, 0.2), rgba(139, 90, 60, 0.2));
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Fulfillment Section */
+        .fulfillment {
+            background: linear-gradient(135deg, #7b9a76 0%, #5a7c55 100%);
+            color: white;
+        }
+
+        .fulfillment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .fulfillment-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .fulfillment-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #f9f7f4;
+        }
+
+        .fulfillment-item::before {
+            content: "✓";
+            display: block;
+            font-size: 2rem;
+            color: #f9f7f4;
+            margin-bottom: 1rem;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
         }
-        
-        .product-card {
-            background: #f7fafc;
-            border-radius: 20px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        
-        .product-image {
-            width: 200px;
-            height: 200px;
-            background: linear-gradient(135deg, #fbb6ce, #f687b3);
-            border-radius: 15px;
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
-        }
-        
-        .product-title {
-            font-size: 1.3rem;
-            color: #2d3748;
-            margin-bottom: 0.5rem;
-        }
-        
-        .product-price {
-            font-size: 1.1rem;
-            color: #68d391;
-            font-weight: 600;
-        }
-        
-        /* POD Shops Section */
-        .pod-shops {
-            padding: 6rem 0;
-            background: linear-gradient(135deg, #e6fffa 0%, #f0fff4 100%);
-        }
-        
-        .shops-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .shop-button {
+
+        .gallery-item {
             background: white;
-            border: 2px solid #68d391;
-            padding: 1.5rem;
             border-radius: 15px;
-            text-align: center;
-            text-decoration: none;
-            color: #2d3748;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: block;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
-        
-        .shop-button:hover {
-            background: #68d391;
-            color: white;
+
+        .gallery-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(104, 211, 145, 0.2);
         }
-        
-        .shop-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-        
-        /* Brand Story */
-        .brand-story {
-            padding: 6rem 0;
-            background: white;
-        }
-        
-        .story-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .founder-image {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, #fbb6ce, #f687b3);
-            border-radius: 20px;
+
+        .mockup-placeholder {
+            height: 300px;
+            background: linear-gradient(135deg, #e8f5e8, #d4e7d4);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 4rem;
-            color: white;
+            color: #7b9a76;
         }
-        
-        .story-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #4a5568;
-            margin-bottom: 2rem;
+
+        .gallery-info {
+            padding: 1.5rem;
+            text-align: center;
         }
-        
-        .founder-signature {
-            font-family: 'Brush Script MT', cursive;
-            font-size: 1.5rem;
-            color: #68d391;
-            margin-top: 1rem;
+
+        .gallery-info h3 {
+            margin-bottom: 0.5rem;
+            color: #2d4a2b;
         }
-        
-        /* Newsletter */
-        .newsletter {
-            padding: 6rem 0;
-            background: linear-gradient(135deg, #fbb6ce 0%, #f687b3 100%);
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #8b5a3c;
+        }
+
+        /* Social Section */
+        .social {
+            background: linear-gradient(135deg, #8b5a3c 0%, #a0694d 100%);
             color: white;
             text-align: center;
         }
-        
-        .newsletter-form {
-            max-width: 500px;
-            margin: 2rem auto;
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .newsletter-input {
-            flex: 1;
-            padding: 1rem;
-            border: none;
-            border-radius: 25px;
-            font-size: 1rem;
-        }
-        
-        .newsletter-button {
-            background: white;
-            color: #f687b3;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 25px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .newsletter-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255,255,255,0.3);
-        }
-        
-        /* Footer */
-        footer {
-            background: #2d3748;
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-        }
-        
-        .social-icons {
+
+        .social-links {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-bottom: 2rem;
+            margin-top: 2rem;
         }
-        
-        .social-icon {
+
+        .social-link {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem 2rem;
+            text-decoration: none;
             color: white;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
+            border-radius: 50px;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
         }
-        
-        .social-icon:hover {
-            color: #68d391;
-            transform: translateY(-3px);
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
         }
-        
+
+        /* Contact Section */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2d4a2b;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #7b9a76;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #7b9a76 0%, #5a7c55 100%);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(123, 154, 118, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #2d4a2b;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            margin-bottom: 1rem;
+        }
+
+        .footer-message {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #7b9a76;
+        }
+
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
+            .hero-content h1 {
                 font-size: 2.5rem;
             }
-            
+
             .tagline {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
-            
-            .story-content {
+
+            .about-content {
                 grid-template-columns: 1fr;
-                gap: 2rem;
             }
-            
-            .newsletter-form {
+
+            .about-image {
+                font-size: 5rem;
+            }
+
+            nav ul {
                 flex-direction: column;
+                gap: 1rem;
             }
-            
-            .section-title {
-                font-size: 2rem;
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
             }
-        }
-        
-        /* Scroll animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-        
-        .fade-in.active {
-            opacity: 1;
-            transform: translateY(0);
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about,
+            .contact-form {
+                margin: 0 10px;
+                padding: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <nav class="container">
-            <a href="#" class="logo">PlantHerPower</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#story">Story</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">PlantHerPower</a>
+                <nav>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="floating-leaves">
-            <div class="leaf"></div>
-            <div class="leaf"></div>
-            <div class="leaf"></div>
-            <div class="leaf"></div>
-            <div class="leaf"></div>
-            <div class="leaf"></div>
-            <div class="leaf"></div>
-            <div class="leaf"></div>
-        </div>
-        <div class="container hero-content">
-            <h1>PlantHerPower</h1>
-            <p class="tagline">Rooted in Nature. Powered by Women.</p>
-            <a href="#products" class="cta-button">Explore Collection</a>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>PlantHerPower</h1>
+                <p class="tagline">Grow. Empower. Inspire.</p>
+                <a href="#gallery" class="cta-button">Shop Our Collection</a>
+            </div>
         </div>
     </section>
 
-    <!-- Featured Products -->
-    <section class="featured-products" id="products">
-        <div class="container">
-            <h2 class="section-title fade-in">Featured Collection</h2>
-            <div class="products-grid">
-                <div class="product-card fade-in">
-                    <div class="product-image">👕</div>
-                    <h3 class="product-title">Empowered Tee</h3>
-                    <p class="product-price">$28.99</p>
+    <section id="about" class="container">
+        <div class="about">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Welcome to PlantHerPower, where <span class="highlight">eco-feminism meets ethical fashion</span>. Founded by Kashif and his girlfriend Tooba, our brand combines a deep love for nature with a passion for women's empowerment.</p>
+                    
+                    <p>We believe that fashion should be a force for good – celebrating the strength of women while honoring our planet. Every design tells a story of growth, resilience, and the beautiful connection between feminine power and the natural world.</p>
+                    
+                    <p><strong>PlantHerPower is a passion project by a real couple – Kashif and Tooba – who design every piece with heart and purpose.</strong> Our mission is to create clothing that not only looks beautiful but also carries a message of sustainability, empowerment, and positive change.</p>
                 </div>
-                <div class="product-card fade-in">
-                    <div class="product-image">🌱</div>
-                    <h3 class="product-title">Nature's Voice Tee</h3>
-                    <p class="product-price">$32.99</p>
-                </div>
-                <div class="product-card fade-in">
-                    <div class="product-image">💪</div>
-                    <h3 class="product-title">Strength & Grace Tee</h3>
-                    <p class="product-price">$29.99</p>
+                <div class="about-image">
+                    🌸🌿
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- POD Shops -->
-    <section class="pod-shops">
+    <section class="fulfillment">
         <div class="container">
-            <h2 class="section-title fade-in">Our POD Shops</h2>
-            <div class="shops-grid">
-                <a href="#" class="shop-button fade-in">
-                    <i class="fab fa-amazon shop-icon"></i>
-                    Amazon Merch
-                </a>
-                <a href="#" class="shop-button fade-in">
-                    <i class="fas fa-store shop-icon"></i>
-                    Redbubble
-                </a>
-                <a href="#" class="shop-button fade-in">
-                    <i class="fas fa-tshirt shop-icon"></i>
-                    TeePublic
-                </a>
-                <a href="#" class="shop-button fade-in">
-                    <i class="fas fa-shopping-bag shop-icon"></i>
-                    Etsy
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Brand Story -->
-    <section class="brand-story" id="story">
-        <div class="container">
-            <h2 class="section-title fade-in">Our Story</h2>
-            <div class="story-content">
-                <div class="founder-image fade-in">👩‍🎨</div>
-                <div class="fade-in">
-                    <p class="story-text">
-                        PlantHerPower was born from a vision to create fashion that empowers women while respecting our planet. 
-                        Every design tells a story of strength, sustainability, and sisterhood. We believe that when women are 
-                        empowered and connected to nature, they can change the world.
-                    </p>
-                    <p class="story-text">
-                        From our home in Lucknow to women around the globe, we're building a community that celebrates 
-                        authenticity, environmental consciousness, and the unstoppable power of women supporting women.
-                    </p>
-                    <div class="founder-signature">
-                        With love & purpose,<br>
-                        Tooba from Lucknow ✨
-                    </div>
+            <h2 class="section-title">Our Promise</h2>
+            <div class="fulfillment-grid">
+                <div class="fulfillment-item">
+                    <h3>Eco-Friendly Printing</h3>
+                    <p>All products are printed on demand using environmentally safe, water-based inks that are gentle on both skin and planet.</p>
+                </div>
+                <div class="fulfillment-item">
+                    <h3>Global Shipping</h3>
+                    <p>We ship worldwide through trusted partners, ensuring your order reaches you safely no matter where you are.</p>
+                </div>
+                <div class="fulfillment-item">
+                    <h3>Zero Waste</h3>
+                    <p>Made to order means no excess waste – each piece is created specifically for you, reducing environmental impact.</p>
+                </div>
+                <div class="fulfillment-item">
+                    <h3>Full Tracking</h3>
+                    <p>Every order comes with complete tracking information so you can follow your package from creation to delivery.</p>
+                </div>
+                <div class="fulfillment-item">
+                    <h3>Sustainable Packaging</h3>
+                    <p>Your order arrives in biodegradable or recycled packaging materials, keeping our commitment to the earth.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <div class="container">
-            <h2 class="section-title fade-in">Join Our Movement</h2>
-            <p class="fade-in">Get exclusive designs, sustainable fashion tips, and empowering stories delivered to your inbox.</p>
-            <form class="newsletter-form fade-in">
-                <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
-                <button type="submit" class="newsletter-button">Subscribe</button>
-            </form>
+    <section id="gallery" class="container">
+        <h2 class="section-title">Featured Designs</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="mockup-placeholder">👕</div>
+                <div class="gallery-info">
+                    <h3>Bloom Where You're Planted</h3>
+                    <p class="price">$24.99</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="mockup-placeholder">👚</div>
+                <div class="gallery-info">
+                    <h3>Wild & Free</h3>
+                    <p class="price">$26.99</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="mockup-placeholder">🏠</div>
+                <div class="gallery-info">
+                    <h3>Mother Earth Warrior</h3>
+                    <p class="price">$32.99</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="mockup-placeholder">👕</div>
+                <div class="gallery-info">
+                    <h3>Rooted in Strength</h3>
+                    <p class="price">$24.99</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="mockup-placeholder">👚</div>
+                <div class="gallery-info">
+                    <h3>Feminist & Flourishing</h3>
+                    <p class="price">$26.99</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="mockup-placeholder">🏠</div>
+                <div class="gallery-info">
+                    <h3>Nature's Daughter</h3>
+                    <p class="price">$32.99</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="mockup-placeholder">👕</div>
+                <div class="gallery-info">
+                    <h3>Plant Lady Power</h3>
+                    <p class="price">$24.99</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="mockup-placeholder">👚</div>
+                <div class="gallery-info">
+                    <h3>Grow Your Own Magic</h3>
+                    <p class="price">$26.99</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="mockup-placeholder">🏠</div>
+                <div class="gallery-info">
+                    <h3>Earth Goddess</h3>
+                    <p class="price">$32.99</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section class="social">
+        <div class="container">
+            <h2 class="section-title">Connect With Us</h2>
+            <p>Follow our journey and join our community of empowered women who care about the planet.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">📷 Instagram @plantherpower</a>
+                <a href="#" class="social-link">📌 Pinterest @plantherpower</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+        <div style="text-align: center; margin-top: 2rem;">
+            <p>Or email us directly at: <strong>hello@plantherpower.com</strong></p>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
-            <div class="social-icons">
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            <div class="footer-content">
+                <p class="footer-message">"Empowering women, nurturing nature, one design at a time."</p>
+                <p>&copy; 2025 PlantHerPower. All rights reserved.</p>
+                <p>Designed with 💚 by Kashif & Tooba</p>
             </div>
-            <p>&copy; 2024 PlantHerPower. All rights reserved. Made with 💚 for women who change the world.</p>
-            <p>PlantHerPower is co-created by Kashif & Tooba – blending feminine energy with nature-inspired art.</p>
         </div>
     </footer>
 
     <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! We\'ll get back to you soon. 🌿');
+            event.target.reset();
+        }
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -563,60 +605,15 @@
             });
         });
 
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Header background on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
-        });
-
-        // Newsletter form submission
-        document.querySelector('.newsletter-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = e.target.querySelector('input').value;
-            alert(`Thank you for joining our movement! Welcome to PlantHerPower, ${email} ✨`);
-            e.target.reset();
-        });
-
-        // Product card hover effects
-        document.querySelectorAll('.product-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-15px) scale(1.02)';
+        // Add some interactive hover effects
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
             });
             
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0) scale(1)';
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
             });
-        });
-
-        // Add micro-interactions to CTA button
-        document.querySelector('.cta-button').addEventListener('mouseenter', (e) => {
-            e.target.style.transform = 'translateY(-5px) scale(1.05)';
-        });
-
-        document.querySelector('.cta-button').addEventListener('mouseleave', (e) => {
-            e.target.style.transform = 'translateY(0) scale(1)';
         });
     </script>
 </body>
