@@ -115,6 +115,114 @@
             box-shadow: 0 6px 20px rgba(139, 90, 60, 0.4);
         }
 
+        /* Shop Section */
+        .shop-section {
+            background: #e8f5e8;
+            color: #2d4a2b;
+            padding: 4rem 0;
+        }
+
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .shop-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #2d4a2b;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border: 3px solid transparent;
+            text-align: center;
+        }
+
+        .shop-button:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .shop-button.amazon:hover { border-color: #ff9900; }
+        .shop-button.redbubble:hover { border-color: #e41e20; }
+        .shop-button.teepublic:hover { border-color: #4a90e2; }
+        .shop-button.spreadshirt:hover { border-color: #00b4d8; }
+
+        .shop-logo {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .amazon-logo {
+            background: white;
+            color: #232f3e;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+
+        .amazon-logo::after {
+            content: "";
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            right: 15px;
+            height: 3px;
+            background: #ff9900;
+            border-radius: 2px;
+        }
+
+        .redbubble-logo {
+            background: #e41e20;
+            color: white;
+            border-radius: 15px;
+            font-weight: bold;
+        }
+
+        .teepublic-logo {
+            color: #2d4a2b;
+            font-size: 3rem;
+        }
+
+        .spreadshirt-logo {
+            color: #00b4d8;
+            font-size: 3.5rem;
+        }
+
+        .shop-button h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: #2d4a2b;
+            font-weight: bold;
+        }
+
+        .shop-button p {
+            font-size: 1rem;
+            opacity: 0.7;
+            line-height: 1.5;
+            color: #2d4a2b;
+        }
+
+        .shop-section .section-title {
+            color: #2d4a2b;
+        }
+
+        .shop-section p {
+            color: #2d4a2b;
+        }
+
         /* Section Styles */
         section {
             padding: 4rem 0;
@@ -136,6 +244,10 @@
             background: linear-gradient(135deg, #7b9a76, #8b5a3c);
             margin: 1rem auto;
             border-radius: 2px;
+        }
+
+        .shop-section .section-title {
+            color: white;
         }
 
         /* About Section */
@@ -393,17 +505,25 @@
                 margin: 0 10px;
                 padding: 2rem;
             }
+
+            .shop-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .shop-button {
+                padding: 1.5rem;
+            }
         }
 
         .circle-logo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #7b9a76;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #7b9a76;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
     </style>
 </head>
 <body>
@@ -414,6 +534,7 @@
                 <nav>
                     <ul>
                         <li><a href="#about">About</a></li>
+                        <li><a href="#shop">Shop</a></li>
                         <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -428,7 +549,7 @@
                 <img src="https://raw.githubusercontent.com/kashifxploitz/plantherpower/main/logo%20php.png" alt="PlantHerPower Logo" width="100px" class="circle-logo">
                 <h1>PlantHerPower</h1>
                 <p class="tagline">Grow. Empower. Inspire.</p>
-                <a href="#gallery" class="cta-button">Shop Our Collection</a>
+                <a href="#shop" class="cta-button">Shop Our Collection</a>
             </div>
         </div>
     </section>
@@ -447,6 +568,35 @@
                 <div class="about-image">
                     🌸🌿
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="shop" class="shop-section">
+        <div class="container">
+            <h2 class="section-title">Our POD Shops</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem; opacity: 0.8;">Choose your favorite platform to browse and purchase our eco-feminist designs</p>
+            <div class="shop-grid">
+                <a href="#" class="shop-button amazon" onclick="alert('Amazon Merch shop link coming soon!')">
+                    <div class="shop-logo amazon-logo">amazon</div>
+                    <h3>Amazon Merch</h3>
+                    <p>Fast shipping and Amazon Prime benefits for your favorite designs</p>
+                </a>
+                <a href="#" class="shop-button redbubble" onclick="alert('RedBubble shop link coming soon!')">
+                    <div class="shop-logo redbubble-logo">🛒</div>
+                    <h3>Redbubble</h3>
+                    <p>Browse our full collection of apparel, accessories, and home decor items</p>
+                </a>
+                <a href="#" class="shop-button teepublic" onclick="alert('TeePublic shop link coming soon!')">
+                    <div class="shop-logo teepublic-logo">👕</div>
+                    <h3>TeePublic</h3>
+                    <p>Discover unique designs on premium quality apparel and accessories</p>
+                </a>
+                <a href="#" class="shop-button spreadshirt" onclick="alert('Spreadshirt shop link coming soon!')">
+                    <div class="shop-logo spreadshirt-logo">👔</div>
+                    <h3>Spreadshirt</h3>
+                    <p>Custom printing on sustainable materials with European quality standards</p>
+                </a>
             </div>
         </div>
     </section>
